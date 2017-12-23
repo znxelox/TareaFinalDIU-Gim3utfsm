@@ -1,0 +1,160 @@
+<html lang="es" >
+  <head>
+    <title>Gimnasio III</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/lib/bootstrap/css/bootstrap.css"/>
+    <!--<link rel="stylesheet" href="public/lib/theme/style.css"/> -->
+  </head>
+  <body>
+
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" style="color:#FFFFFF">Gimnasio III</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link " href="ficha.html">Ficha</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="reserva.html">Reserva</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Horario</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="#">Asistencia</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="#">Rutina</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Salir</a>
+      </li> 
+    </ul>
+  </div> 
+</nav>
+<br>
+
+<div class="container">
+  <h2>Reserva</h2>
+  <br>
+  <h3>¿Esta todo ok?</h3>
+  <br>
+<div class="container">
+  <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <h4>Sala a reservar:</h4>
+        </div>
+        <div class="col-sm-5 col-md-6">
+          <h4>Máquinas y pesas</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <h4>Horarios a reservar:</h4>
+        </div>
+        <div class="col-sm-5 col-md-6">
+          <h4>Lunes 04 (09:00-10:00)</h4>
+          <h4>Miércoles 06 (12:00-13:00)</h4>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6" >
+          <a href="reserva2.html"><button type="button"  class="btn btn-primary">Atras</button></a>
+        </div>
+        <div class="col-sm-5 col-md-6" style="text-align:right">
+          <a href="reserva4.html"><button type="button"  class="btn btn-primary">Confirmar</button></a>
+        </div>
+    </div>
+</div>
+
+
+        
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="public/lib/jquery/jQuery3.1.1.min.js"></script>-->
+    <script type="text/javascript" src="public/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+var waitingDialog = waitingDialog || (function ($) {
+    'use strict';
+
+  // Creating modal dialog's DOM
+  var $dialog = $(
+    '<div class="modal fade" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true" style="padding-top:15%; overflow-y:visible;">' +
+    '<div class="modal-dialog modal-m">' +
+    '<div class="modal-content">' +
+      '<div class="modal-header"><h3 style="margin:0;"></h3></div>' +
+      '<div class="modal-body">' +
+        '<div class="progress progress-striped active" style="margin-bottom:0;"><div class="progress-bar" style="width: 100%"></div></div>' +
+      '</div>' +
+    '</div></div></div>');
+
+  return {
+    /**
+     * Opens our dialog
+     * @param message Custom message
+     * @param options Custom options:
+     *          options.dialogSize - bootstrap postfix for dialog size, e.g. "sm", "m";
+     *          options.progressType - bootstrap postfix for progress bar type, e.g. "success", "warning".
+     */
+    show: function (message, options) {
+      // Assigning defaults
+      if (typeof options === 'undefined') {
+        options = {};
+      }
+      if (typeof message === 'undefined') {
+        message = 'Loading';
+      }
+      var settings = $.extend({
+        dialogSize: 'm',
+        progressType: '',
+        onHide: null // This callback runs after the dialog was hidden
+      }, options);
+
+      // Configuring dialog
+      $dialog.find('.modal-dialog').attr('class', 'modal-dialog').addClass('modal-' + settings.dialogSize);
+      $dialog.find('.progress-bar').attr('class', 'progress-bar');
+      if (settings.progressType) {
+        $dialog.find('.progress-bar').addClass('progress-bar-' + settings.progressType);
+      }
+      $dialog.find('h3').text(message);
+      // Adding callbacks
+      if (typeof settings.onHide === 'function') {
+        $dialog.off('hidden.bs.modal').on('hidden.bs.modal', function (e) {
+          settings.onHide.call($dialog);
+        });
+      }
+      // Opening dialog
+      $dialog.modal();
+    },
+    /**
+     * Closes dialog
+     */
+    hide: function () {
+      $dialog.modal('hide');
+    }
+  };
+
+})(jQuery);
+ 8000);
+});
+    </script>
+
+     </body>
+</html>
